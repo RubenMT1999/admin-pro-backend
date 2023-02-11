@@ -1,0 +1,15 @@
+- instalamos ExpressJs con npm install express --save.
+
+-instalar nodemon, para que al detectar cambios se reinicie el servidor
+ y no tengamos nosotros que bajar el servidor y volverlo a subir.
+
+- para ejecutar los scripts usar npm run y el nombre del script situado en 
+  el package.json. Instalo la extensión npm-scripts
+
+- para conectar node a mongo instalamos mongoose en la terminal con 
+  npm i mongoose
+
+- hacemos npm i dotenv  para leer archivos .env
+
+- instalamos npm i cors  para establecer desde que dominio
+  vamos a permitir las peticiones a nuestro backend
