@@ -1,0 +1,26 @@
+- instalamos ExpressJs con npm install express --save.
+
+-instalar nodemon, para que al detectar cambios se reinicie el servidor
+ y no tengamos nosotros que bajar el servidor y volverlo a subir.
+
+- para ejecutar los scripts usar npm run y el nombre del script situado en 
+  el package.json. Instalo la extensión npm-scripts
+
+- para conectar node a mongo instalamos mongoose en la terminal con 
+  npm i mongoose
+
+- hacemos npm i dotenv  para leer archivos .env
+
+- instalamos npm i cors  para establecer desde que dominio
+  vamos a permitir las peticiones a nuestro backend
+
+- instalamos npm i express-validator para validar nuestras rutas
+
+- para encriptar la password instalar npm i bcryptjs
+
+- para generar jwt instalamos npm i jsonwebtoken
+
+- archivo env con
+  PORT=3000
+  DB_CNN=mongodb+srv://usuario:password@cluster0.rxjpgcr.mongodb.net/hospitaldb
+  JWT_SECRET= Holafduh849984wuyf94wh@90fwhf9w47gh
