@@ -5,7 +5,7 @@ const express = require('express');
 //en las variables de entorno de node.
 require('dotenv').config();
 
-var cors = requier('cors');
+var cors = require('cors');
 
 const { dbConnection } = require('./database/config');
 
@@ -18,18 +18,17 @@ const app = express();
 //va a pasar por este punto y se tendrá el cors configurado
 app.use(cors());
 
+// Lectura y parseo del body
+app.use(express.json());
+
 //Base de datos
 dbConnection();
 
 //Rutas
-app.get( '/', (req, resp) => {
+app.use( '/api/usuarios',  require('./routes/usuarios'));
+app.use( '/api/login',  require('./routes/auth'));
 
-    resp.json({
-        ok: true,
-        msg: 'Hola Mundo',
-    })
 
-});
 
 //el listen tiene el puerto y un callback para cuando se levante el servidor
 app.listen(process.env.PORT, () => {
