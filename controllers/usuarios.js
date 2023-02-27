@@ -9,11 +9,24 @@ const Usuario = require('../models/usuario');
 
 const getUsuarios = async(req, resp) => {
 
-    const usuarios = await Usuario.find({}, 'nombre email role google');
+    //parametro para paginación
+    const desde = Number(req.query.desde) || 0;
+
+    //queremos hacer dos tareas que son asincronas.
+    //de este modo hacemos que se ejecutan simultaneamente
+    //y desestructuramos para obtener el valor de cada promesa
+    const [ usuarios, total] = await Promise.all([
+        Usuario.find({}, 'nombre email role google img')
+                .skip(desde)
+                .limit(5),
+
+        Usuario.countDocuments()
+    ])
 
     resp.json({
         ok: true,
         usuarios: usuarios,
+        total
         //uid configurado en el middleware validarJWT
         /* uid: req.uid */
     });
@@ -150,12 +163,6 @@ const borrarUsuario = async(req, resp = response) =>{
         });
     }
 }
-
-
-
-
-
-
 
 
 

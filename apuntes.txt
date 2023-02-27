@@ -24,3 +24,7 @@
   PORT=3000
   DB_CNN=mongodb+srv://usuario:password@cluster0.rxjpgcr.mongodb.net/hospitaldb
   JWT_SECRET= Holafduh849984wuyf94wh@90fwhf9w47gh
+
+- para subir imagenes instalar npm i express-fileupload
+
+- instalamos npm i uuid para agregar un identificador unico a las imagenes
