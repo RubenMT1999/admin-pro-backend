@@ -24,7 +24,13 @@
   PORT=3000
   DB_CNN=mongodb+srv://usuario:password@cluster0.rxjpgcr.mongodb.net/hospitaldb
   JWT_SECRET= Holafduh849984wuyf94wh@90fwhf9w47gh
+  GOOGLE_ID=654622771453-jf22r6uopircg7fe0221dsd6kbjn5k60.apps.googleusercontent.com
+  GOOGLE_SECRET=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
 
 - para subir imagenes instalar npm i express-fileupload
 
 - instalamos npm i uuid para agregar un identificador unico a las imagenes
+
+- instalar npm install google-auth-library --save para google sign in
+
+- pagina documentacion google https://developers.google.com/identity/gsi/web/guides/verify-google-id-token?hl=es-419
