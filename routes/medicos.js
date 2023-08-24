@@ -15,12 +15,13 @@ const {
     getMedicos,
     crearMedico,
     actualizarMedico,
-    borrarMedico
+    borrarMedico,
+    getMedicoById
 } = require('../controllers/medicos');
 
 const router = Router();
 
-router.get( '/', getMedicos);
+router.get( '/',validarJWT, getMedicos);
 
 //el segundo parametro son los middlewares, serán los validadores
 //primero hacemos los checks y luego el middleware personalizado, pue sen el
@@ -44,7 +45,7 @@ router.put( '/:id',
 
 router.delete( '/:uid', validarJWT, borrarMedico);
 
-
+router.get('/:id',validarJWT,getMedicoById);
 
 
 module.exports = router;

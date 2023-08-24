@@ -1,5 +1,7 @@
 - instalamos ExpressJs con npm install express --save.
 
+-npm run start:dev 
+
 -instalar nodemon, para que al detectar cambios se reinicie el servidor
  y no tengamos nosotros que bajar el servidor y volverlo a subir.
 

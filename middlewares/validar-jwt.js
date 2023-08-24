@@ -18,6 +18,7 @@ const validarJWT = (req, resp, next) => {
         //ahora en el controler tendremos un nuevo request
         req.uid = uid;
         
+        //para asegurarnos que esta parte del codigo se ha ejecutado
         next();
     }catch(error){
         return resp.status(401).json({

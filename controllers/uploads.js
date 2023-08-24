@@ -35,7 +35,7 @@ const fileUpload = (req, resp = response) => {
       const extensionArchivo = nombreCortado[nombreCortado.length-1];
 
     //Validar extesion
-    const extensionesValidas = ['png','jpg','jpeg','gif'];
+    const extensionesValidas = ['png','jpg','jpeg','gif','PNG'];
     if(!extensionesValidas.includes(extensionArchivo)){
         return resp.status(400).json({
             ok: false,
@@ -81,7 +81,7 @@ const retornaImagen = (req, resp = response) => {
     if(fs.existsSync(pathImg)){
         resp.sendFile(pathImg);
     }else{
-        const pathImg = path.join(__dirname,`../uploads/noImage.png`);
+        const pathImg = path.join(__dirname,`../uploads/no_image.jpg`);
         resp.sendFile(pathImg);
     }
 

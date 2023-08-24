@@ -18,6 +18,10 @@ const app = express();
 //va a pasar por este punto y se tendrá el cors configurado
 app.use(cors());
 
+app.listen(4200, function () {
+    console.log('CORS-enabled web server listening on port 4200')
+  })
+
 // Carpeta pública
 app.use(express.static('public'));
 
