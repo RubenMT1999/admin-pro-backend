@@ -3,6 +3,8 @@ const Usuario = require('../models/usuario');
 const bcrypt = require('bcryptjs');
 const {generarJWT} = require('..//helpers/jwt');
 const {googleVerify} = require('..//helpers/google-verify');
+const { getMenuFrontEnd } = require('../helpers/menu-frontend');
+
 
 
 
@@ -30,7 +32,7 @@ const login = async(req,resp = response) => {
         if(!validPassword){
             return resp.status(400).json({
                 ok: false,
-                msg: 'Contraseña no válida'
+                msg: 'Contraseña no válida',
             });
         }
 
@@ -39,8 +41,9 @@ const login = async(req,resp = response) => {
 
         resp.json({
             ok:true,
-            token: token
-        })
+            token: token,
+            menu: getMenuFrontEnd(usuarioDB.role)
+        });
 
     }catch(error){
         console.log(error);
@@ -81,7 +84,8 @@ const googleSignIn = async(req, resp = response) => {
         resp.json({
             ok: true,
             email, name, picture,
-            token
+            token,
+            menu: getMenuFrontEnd(usuario.role)
         });
 
         
@@ -108,7 +112,8 @@ const renewToken = async (req, resp = response) => {
     resp.json({
         ok: true,
         token,
-        usuarioDB
+        usuarioDB,
+        menu: getMenuFrontEnd(usuarioDB.role)
     })
 }
 

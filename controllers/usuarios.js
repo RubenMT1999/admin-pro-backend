@@ -117,7 +117,10 @@ const actualizarUsuarios = async(req, resp = response) => {
             })
         }
         
-
+        //el parámetro { new: true } 
+        // controla si deseas recibir el documento actualizado como resultado de la operación.
+        // Si se establece en true, obtendrás el documento actualizado; si se establece en false, 
+        //obtendrás el documento antes de la actualización.
         const usuarioActualizado = await Usuario.findByIdAndUpdate(  uid, campos, {new: true} );
 
 
